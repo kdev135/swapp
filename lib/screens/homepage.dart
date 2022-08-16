@@ -1,6 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
 import "package:badges/badges.dart";
+import 'package:swapp/components/product_card.dart';
 import 'package:swapp/constants.dart';
 import 'package:swapp/screens/view_product.dart';
 
@@ -23,7 +24,7 @@ class Homepage extends StatelessWidget {
               child: Badge(
                   badgeContent: Text("5"),
                   badgeColor: Colors.lightBlue,
-                  child: IconButton(color: Colors.black, onPressed: () {}, icon: Icon(Icons.swap_horiz))),
+                  child: IconButton(color: Colors.black, onPressed: () {}, icon: const Icon(Icons.swap_horiz))), // Swap alerts 
             ),
           ],
         ),
@@ -45,7 +46,7 @@ class Homepage extends StatelessWidget {
               GridView.count(
                 shrinkWrap: true,
                 crossAxisCount: 2,
-                children: [
+                children:const [
                   ProductCard(),
                   ProductCard(),
                   ProductCard(),
@@ -62,42 +63,3 @@ class Homepage extends StatelessWidget {
   }
 }
 
-class ProductCard extends StatelessWidget {
-  const ProductCard({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: (() {
-        Navigator.push(
-          context,
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) => ViewProduct(),
-          ),
-        );
-      }),
-      child: Card(
-        child: Padding(
-          padding: const EdgeInsets.all(5.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                color: Colors.blue,
-                height: 90,
-                width: 180,
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Text("Label"),
-              Text('ksh. 2300')
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}

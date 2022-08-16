@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../screens/view_product.dart';
 
+
+/// Template for a product with its details on the homepage
 class ProductCard extends StatelessWidget {
   const ProductCard({
     Key? key,
@@ -30,7 +32,7 @@ class ProductCard extends StatelessWidget {
                 height: 90,
                 width: 180,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Text("Label"),
