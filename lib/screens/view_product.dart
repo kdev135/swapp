@@ -1,6 +1,9 @@
 import "package:flutter/material.dart";
 import 'package:swapp/constants.dart';
+import 'package:swapp/styles.dart';
 
+
+// This is the screen that shows the details of a product and a bid button.
 class ViewProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,6 +12,21 @@ class ViewProduct extends StatelessWidget {
       backgroundColor: Colors.transparent,
       elevation: 0,
       
+      ),
+      bottomNavigationBar: Card(
+        child: Padding(
+          padding: pagePadding,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                flex: 2,
+                child: ElevatedButton(onPressed: (){}, child: Text("Place bid",))),
+              Expanded(flex:1,child: Icon(Icons.favorite, color: Colors.grey,)),
+        
+            ]
+          ),
+        ),
       ),
       body: Padding(
         padding: pagePadding,
@@ -22,7 +40,7 @@ class ViewProduct extends StatelessWidget {
             
             ),
             SizedBox(height: 10,),
-            ListTile(leading:Text("Name goes here"), trailing: Icon(Icons.favorite, color: Colors.grey,),),
+            ListTile(leading:Text("Name goes here", style: productLableText,), trailing: Text("Ksh. 2000")),
             Text("description of the product")
 
           ],

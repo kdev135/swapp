@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:swapp/styles.dart';
 
 import '../screens/view_product.dart';
 
@@ -35,7 +36,7 @@ class ProductCard extends StatelessWidget {
               const SizedBox(
                 height: 5,
               ),
-              Text("Label"),
+              Text("Label", style: productLableText,),
               Text('ksh. 2300')
             ],
           ),
