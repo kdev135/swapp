@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:flutter_svg/flutter_svg.dart';
 import "package:badges/badges.dart";
-import 'package:swapp/components/product_card.dart';
+import 'package:swapp/models/product_card.dart';
 import 'package:swapp/constants.dart';
 import 'package:swapp/screens/view_product.dart';
 
