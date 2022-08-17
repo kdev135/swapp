@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:swapp/styles.dart';
 
@@ -16,12 +14,7 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (() {
-        Navigator.push(
-          context,
-          MaterialPageRoute<void>(
-            builder: (BuildContext context) => ViewProduct(),
-          ),
-        );
+        Navigator.pushNamed(context, '/viewProduct', arguments: {"imagePath": imagePath, "label":label, "price":price});
       }),
       child: Card(
         child: Padding(
@@ -36,7 +29,7 @@ class ProductCard extends StatelessWidget {
                   imagePath,
                   width: 100,
                   height: 100,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.contain,
                 ),
               ),
               Expanded(
@@ -44,7 +37,7 @@ class ProductCard extends StatelessWidget {
                 child: Text(
                   label,
                   style: productLableText,
-                  overflow: TextOverflow.fade,
+                  overflow: TextOverflow.ellipsis,
                   softWrap: false,
                 ),
               ),

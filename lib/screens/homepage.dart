@@ -38,7 +38,6 @@ class Homepage extends StatelessWidget {
                   isDense: true,
                   prefixIcon: Icon(Icons.search),
                   hintText: "Search",
-                  label: Text("data"),
                   contentPadding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                   border: outlineInputBorder,
                 ),
@@ -63,16 +62,16 @@ class Homepage extends StatelessWidget {
                     label: "Call of duty installer",
                     price: 2500,
                   ),
-                  // ProductCard(
-                  //   imagePath: "images/gaming_chair.png",
-                  //   label: "Awesome gaming chair",
-                  //   price: 2500,
-                  // ),
-                  // ProductCard(
-                  //   imagePath: "images/posh_chair.png",
-                  //   label: "Nice sofa",
-                  //   price: 2500,
-                  // ),
+                  ProductCard(
+                    imagePath: "images/gaming_chair.png",
+                    label: "Awesome gaming chair",
+                    price: 2500,
+                  ),
+                  ProductCard(
+                    imagePath: "images/posh_chair.png",
+                    label: "Nice sofa",
+                    price: 2500,
+                  ),
                 ],
               )
             ],

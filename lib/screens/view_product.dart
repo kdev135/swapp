@@ -8,6 +8,8 @@ import 'package:swapp/styles.dart';
 class ViewProduct extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as Map;
+    final name = args[0];
     return Scaffold(
       appBar: appBar,
       bottomNavigationBar: Card(
@@ -41,20 +43,21 @@ class ViewProduct extends StatelessWidget {
         padding: pagePadding,
         child: Column(
           children: [
-            Container(
-              height: 200,
-              width: double.maxFinite,
-              color: Colors.blue,
-            ),
+            Image.asset(
+                  args["imagePath"],
+                  width:double.infinity,
+                 height: 200,
+                  fit: BoxFit.contain,
+                ),
             SizedBox(
               height: 10,
             ),
             ListTile(
                 leading: Text(
-                  "Name goes here",
+                  args["label"],
                   style: productLableText,
                 ),
-                trailing: Text("Ksh. 2000")),
+                trailing: Text(args["price"].toString())),
             Text("description of the product")
           ],
         ),

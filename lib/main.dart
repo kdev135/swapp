@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:swapp/screens/bid_offer_screen.dart';
 import 'package:swapp/screens/homepage.dart';
+import 'package:swapp/screens/view_product.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,12 @@ class MyApp extends StatelessWidget {
         
         primarySwatch: Colors.deepPurple,
       ),
-      home:Homepage(),
+
+      routes: {
+    '/': (context) =>  Homepage(),
+    '/viewProduct': (context) => ViewProduct(),
+    '/bidOffer': (context) => BidOfferScreen()
+  }
     );
   }
 }
