@@ -45,14 +45,34 @@ class Homepage extends StatelessWidget {
               ),
               GridView.count(
                 shrinkWrap: true,
+                mainAxisSpacing: 2,
                 crossAxisCount: 2,
-                children:const [
-                  ProductCard(),
-                  ProductCard(),
-                  ProductCard(),
-                  ProductCard(),
-                  ProductCard(),
-                  ProductCard(),
+                children: [
+                  ProductCard(
+                    imagePath: "images/bag.jpg",
+                    label: "bag",
+                    price: 2500,
+                  ),
+                  ProductCard(
+                    imagePath: "images/chair.jpg",
+                    label: "chair",
+                    price: 2500,
+                  ),
+                  ProductCard(
+                    imagePath: "images/COD.jpg",
+                    label: "Call of duty installer",
+                    price: 2500,
+                  ),
+                  // ProductCard(
+                  //   imagePath: "images/gaming_chair.png",
+                  //   label: "Awesome gaming chair",
+                  //   price: 2500,
+                  // ),
+                  // ProductCard(
+                  //   imagePath: "images/posh_chair.png",
+                  //   label: "Nice sofa",
+                  //   price: 2500,
+                  // ),
                 ],
               )
             ],
