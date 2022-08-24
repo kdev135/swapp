@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       routes: {
     '/': (context) =>  Homepage(),
     '/viewProduct': (context) => ViewProduct(),
-    '/bidOffer': (context) => BidOfferScreen()
+    '/bidScreen': (context) => BidOfferScreen()
   }
     );
   }

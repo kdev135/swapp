@@ -50,27 +50,27 @@ class Homepage extends StatelessWidget {
                   ProductCard(
                     imagePath: "images/bag.jpg",
                     label: "bag",
-                    price: 2500,
+                    price: 1500,
                   ),
                   ProductCard(
                     imagePath: "images/chair.jpg",
                     label: "chair",
-                    price: 2500,
+                    price: 1300,
                   ),
                   ProductCard(
                     imagePath: "images/COD.jpg",
                     label: "Call of duty installer",
-                    price: 2500,
+                    price: 1000,
                   ),
                   ProductCard(
                     imagePath: "images/gaming_chair.png",
                     label: "Awesome gaming chair",
-                    price: 2500,
+                    price: 12500,
                   ),
                   ProductCard(
                     imagePath: "images/posh_chair.png",
-                    label: "Nice sofa",
-                    price: 2500,
+                    label: "Sofa Chair",
+                    price: 5000,
                   ),
                 ],
               )

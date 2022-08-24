@@ -10,11 +10,13 @@ class ProductCard extends StatelessWidget {
   String label;
   int price;
 
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: (() {
-        Navigator.pushNamed(context, '/viewProduct', arguments: {"imagePath": imagePath, "label":label, "price":price});
+        Navigator.pushNamed(context, '/viewProduct',
+            arguments: {"imagePath": imagePath, "label": label, "price": price});
       }),
       child: Card(
         child: Padding(
