@@ -1,15 +1,16 @@
 import "package:flutter/material.dart";
 import 'package:swapp/components.dart';
 import 'package:swapp/constants.dart';
-import 'package:swapp/screens/bid_offer_screen.dart';
 import 'package:swapp/styles.dart';
 
 // This is the screen that shows the details of a product and a bid button.
 class ViewProduct extends StatelessWidget {
+  const ViewProduct({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     final args = ModalRoute.of(context)!.settings.arguments as Map;
-   
+
     String desc =
         "There was a time when this wouldn't have bothered her. The fact that it did actually bother her bothered her even more. What had changed in her life that such a small thing could annoy her so much for the entire day? She knew it was ridiculous that she even took notice of it, yet she was still obsessing over it as she tried to fall asleep.";
 
@@ -24,11 +25,8 @@ class ViewProduct extends StatelessWidget {
                 flex: 2,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(
-                          context,
-                          "/bidScreen",
-                          arguments: args
-                          );
+                      Navigator.pushNamed(context, "/bidScreen", arguments: args);
+                      
                     },
                     child: const Text(
                       "Place bid",

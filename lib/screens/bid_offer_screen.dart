@@ -96,17 +96,18 @@ class ReusableChip extends HookWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10.0),
+      padding: const EdgeInsets.only(right: 40.0),
       child: ChoiceChip(
         label: Text(
           label,
-          style: chipTextStyle.copyWith(color: currentChoice.value.toString() == label ? Colors.white : Colors.black),
+          style: defaultTextStyle.copyWith(color: currentChoice.value.toString() == label ? Colors.white : Colors.black),
         ),
         selected: currentChoice.value.toString() == label ? true : false,
-        selectedColor: Colors.lightBlue,
+        selectedColor: Colors.blue,
         disabledColor: Colors.grey,
         onSelected: (value) {
           currentChoice.value = label;
+          print(currentChoice.value);
         },
       ),
     );
