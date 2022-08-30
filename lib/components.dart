@@ -8,3 +8,4 @@ var appBar = AppBar(
 );
 
 var swappLogo = SvgPicture.asset("images/swappLogo.svg");
+
