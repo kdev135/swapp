@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/kdev135/Flutter/swapp/build/app/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/home/kdev135/Flutter/swapp/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/kdev135/Flutter/swapp/build/app/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/home/kdev135/Flutter/swapp/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/kdev135/Flutter/swapp/build/app/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/home/kdev135/Flutter/swapp/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/kdev135/Flutter/swapp/build/app/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/home/kdev135/Flutter/swapp/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/kdev135/Flutter/swapp/build/app/intermediates/merged_res/debug/drawable-v21_launch_background.xml.flat",
+        "source": "/home/kdev135/Flutter/swapp/android/app/src/main/res/drawable-v21/launch_background.xml"
+    },
+    {
+        "merged": "/home/kdev135/Flutter/swapp/build/app/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/home/kdev135/Flutter/swapp/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    }
+]
