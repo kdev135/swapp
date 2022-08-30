@@ -44,7 +44,11 @@ class Homepage extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       crossAxisAlignment: CrossAxisAlignment.start,
+<<<<<<< HEAD
                       children: [
+=======
+                      children:  [
+>>>>>>> e02a482aee1435188b858521115b9f027dee1b18
                         const CircleAvatar(
                             radius: 30,
                             backgroundColor: Colors.blue,
@@ -55,6 +59,7 @@ class Homepage extends StatelessWidget {
                         const SizedBox(
                           height: 10,
                         ),
+<<<<<<< HEAD
                         Text(
                           "Joe_3541",
                           style: defaultTextStyle,
@@ -63,6 +68,12 @@ class Homepage extends StatelessWidget {
                           "joey354@email.com",
                           style: defaultTextStyle,
                         ),
+=======
+                         Text(
+                          "Joe_3541",style: defaultTextStyle,
+                        ),
+                        Text("joey354@email.com", style: defaultTextStyle,),
+>>>>>>> e02a482aee1435188b858521115b9f027dee1b18
                         const SizedBox(
                           height: 10,
                         )
@@ -75,6 +86,7 @@ class Homepage extends StatelessWidget {
                   width: double.infinity,
                   color: Colors.white,
                   child: Padding(
+<<<<<<< HEAD
                     padding: const EdgeInsets.only(top: 20.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,6 +100,15 @@ class Homepage extends StatelessWidget {
                               print("meeeh");
                               Navigator.pushNamed(context, "/registrationScreen");
                             }),
+=======
+                    padding: const EdgeInsets.only(top:20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children:const [
+                         ReusableDrawerTiles(icon:Icons.account_circle, title: "Profile",),
+                        ReusableDrawerTiles(icon:Icons.list, title: "My uploads",),
+                         ReusableDrawerTiles(icon:Icons.logout, title: "Logout",),
+>>>>>>> e02a482aee1435188b858521115b9f027dee1b18
                       ],
                     ),
                   ),
@@ -151,17 +172,31 @@ class Homepage extends StatelessWidget {
 }
 
 class ReusableDrawerTiles extends HookWidget {
+<<<<<<< HEAD
   const ReusableDrawerTiles({Key? key, required this.title, required this.icon, this.onTap}) : super(key: key);
   final String title;
   final IconData icon;
   final VoidCallback? onTap;
+=======
+  const ReusableDrawerTiles({Key? key, required this.title, required this.icon}) : super(key: key);
+  final String title;
+  final IconData icon;
+>>>>>>> e02a482aee1435188b858521115b9f027dee1b18
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+<<<<<<< HEAD
       onTap:  onTap,
       child: ListTile(
         contentPadding: const EdgeInsets.only(left: 10),
+=======
+      onTap: (() {
+        
+      }),
+      child: ListTile(
+        contentPadding: const EdgeInsets.only(left:10),
+>>>>>>> e02a482aee1435188b858521115b9f027dee1b18
         leading: Icon(icon),
         title: Text(title),
       ),
