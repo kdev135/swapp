@@ -28,9 +28,13 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   badges: ^2.0.3
+<<<<<<< HEAD
   cloud_firestore: ^3.4.6
   cupertino_icons: ^1.0.2
   firebase_core: ^1.21.1
+=======
+  cupertino_icons: ^1.0.2
+>>>>>>> e02a482aee1435188b858521115b9f027dee1b18
   flutter:
     sdk: flutter
   flutter_hooks: ^0.18.5+1
