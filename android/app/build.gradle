@@ -47,12 +47,9 @@ android {
         applicationId "com.example.swapp"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
-<<<<<<< HEAD
+
         minSdkVersion 21
-=======
-        minSdkVersion flutter.minSdkVersion
->>>>>>> e02a482aee1435188b858521115b9f027dee1b18
-        targetSdkVersion flutter.targetSdkVersion
+        targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
     }
@@ -73,9 +70,8 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
-<<<<<<< HEAD
+
 
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
-=======
->>>>>>> e02a482aee1435188b858521115b9f027dee1b18
+

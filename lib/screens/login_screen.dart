@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:swapp/components.dart';
@@ -11,6 +12,9 @@ class LoginScreen extends HookWidget {
 
   @override
   Widget build(BuildContext context) {
+    final email = useState(" ");
+    final password = useState(" ");
+    var isLoading = useState(false);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -24,19 +28,34 @@ class LoginScreen extends HookWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text(
-                      "Login",
-                      style: largeTextFont,
-                      overflow: TextOverflow.fade,
-                      softWrap: false,
-                    ),
-                    ReusableTextField(hintText: "Email"),
+                    Text("Login",
+                        style: largeTextFont,
+                        overflow: TextOverflow.fade,
+                        softWrap: false,
+                        textAlign: TextAlign.center),
+                    ReusableTextField(hintText: "Email",fieldVariable: email,),
                     ReusableTextField(
                       hintText: "Password",
+                      fieldVariable: password,
                       obscureText: true,
                     ),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () async {
+                        isLoading.value = true;
+                        try {
+                          await FirebaseAuth.instance
+                              .signInWithEmailAndPassword(email: email.value, password: password.value).then((value) {
+                          isLoading.value = false;
+
+                          Navigator.pushNamed(context, "/homepage");
+                        });
+                        } on FirebaseAuthException catch (authError) {
+                        isLoading.value = false;
+                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text("${authError.message}"),
+                        ));
+                      }
+                      },
                       child: Text(
                         "Login",
                       ),
@@ -49,7 +68,8 @@ class LoginScreen extends HookWidget {
                       children: [
                         Text("No account yet?"),
                         TextButton(
-                            onPressed: () => Navigator.pushNamed(context, "/registrationScreen"), child: Text("Reigster"))
+                            onPressed: () => Navigator.pushNamed(context, "/registrationScreen"),
+                            child: Text("Register"))
                       ],
                     )
                   ],

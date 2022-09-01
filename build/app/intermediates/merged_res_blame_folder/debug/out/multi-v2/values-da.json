@@ -47,11 +47,28 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "24",
                         "startColumns": "4",
-                        "startOffsets": "2257",
+                        "startOffsets": "2672",
                         "endColumns": "100",
-                        "endOffsets": "2353"
+                        "endOffsets": "2768"
+                    }
+                },
+                {
+                    "source": "/home/kdev135/.gradle/caches/transforms-3/38e30c664341fe5bfcc1d9de04582443/transformed/browser-1.4.0/res/values-da/values-da.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,167,266,373",
+                        "endColumns": "111,98,106,96",
+                        "endOffsets": "162,261,368,465"
+                    },
+                    "to": {
+                        "startLines": "20,21,22,23",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "2257,2369,2468,2575",
+                        "endColumns": "111,98,106,96",
+                        "endOffsets": "2364,2463,2570,2667"
                     }
                 }
             ]
