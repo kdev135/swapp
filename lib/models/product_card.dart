@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:swapp/styles.dart';
 
-import '../screens/view_product.dart';
 
 /// Template for a product with its details on the homepage
 class ProductCard extends StatelessWidget {
   ProductCard({Key? key, required this.imagePath, required this.label, required this.price}) : super(key: key);
-  String imagePath;
-  String label;
-  int price;
+  final String imagePath;
+  final String label;
+  final int price;
 
 
   @override

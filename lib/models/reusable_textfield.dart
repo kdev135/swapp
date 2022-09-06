@@ -8,16 +8,16 @@ class ReusableTextField extends HookWidget {
       this.obscureText = false,
       this.fieldVariable,
       this.labelText,
-      this.maxLines,
+      this.maxLines=1,
       this.textInputType = TextInputType.text})
       : super(key: key);
 
-  TextInputType textInputType;
+ final TextInputType textInputType;
   final bool obscureText;
   final String hintText;
-  var fieldVariable;
-  String? labelText;
-  int? maxLines = 1;
+  final fieldVariable;
+ final  String? labelText;
+  final int maxLines ;
   final OutlineInputBorder outlineInputBorder = OutlineInputBorder(borderRadius: BorderRadius.circular(10));
 
   @override

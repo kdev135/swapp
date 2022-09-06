@@ -50,7 +50,7 @@ class UploadProductScreen extends HookWidget {
                     if (image.value != "" &&
                         name.value != "" &&
                         cashValue.value != "" &&
-                        tags.value != [] &&
+                        tags.value != "" &&
                         details.value != "") {
                       uploadImage(imagePath: image.value, imageName: name.value).then((value) {
                         _firebaseFirestore.collection("Products").add({
@@ -113,7 +113,7 @@ class UploadProductScreen extends HookWidget {
                         child: ElevatedButton(
                             onPressed: () async {
                               image.value = await getImage(ImageSource.gallery);
-                              //debugPrint("path is $imagePath");
+                             
                             },
                             child: Text("Gallery"))),
                   ],
