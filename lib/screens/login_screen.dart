@@ -10,11 +10,12 @@ class LoginScreen extends HookWidget {
   LoginScreen({Key? key}) : super(key: key);
   final OutlineInputBorder outlineInputBorder = OutlineInputBorder(borderRadius: BorderRadius.circular(20));
 
+
   @override
   Widget build(BuildContext context) {
     final email = useState(" ");
     final password = useState(" ");
-    var isLoading = useState(false);
+    var _isLoading = useState(false);
     return Scaffold(
       body: SafeArea(
         child: Padding(
@@ -33,32 +34,43 @@ class LoginScreen extends HookWidget {
                         overflow: TextOverflow.fade,
                         softWrap: false,
                         textAlign: TextAlign.center),
-                    ReusableTextField(hintText: "Email",fieldVariable: email,),
                     ReusableTextField(
-                      hintText: "Password",
+                      hintText: "eg. ellie23@email.com",
+                      fieldVariable: email,
+                      labelText: "Email",
+                    ),
+                    ReusableTextField(
+                      labelText: "Password",
+                      hintText: "",
                       fieldVariable: password,
                       obscureText: true,
+                      maxLines:1
                     ),
                     ElevatedButton(
                       onPressed: () async {
-                        isLoading.value = true;
+                        _isLoading.value = true;
                         try {
                           await FirebaseAuth.instance
-                              .signInWithEmailAndPassword(email: email.value, password: password.value).then((value) {
-                          isLoading.value = false;
+                              .signInWithEmailAndPassword(email: email.value, password: password.value)
+                              .then((value) {
+                            _isLoading.value = false;
 
-                          Navigator.pushNamed(context, "/homepage");
-                        });
+                            Navigator.pushNamed(context, "/homepage");
+                          });
                         } on FirebaseAuthException catch (authError) {
-                        isLoading.value = false;
-                        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                          content: Text("${authError.message}"),
-                        ));
-                      }
+                          _isLoading.value = false;
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text("${authError.message}"),
+                          ));
+                        }
                       },
-                      child: Text(
-                        "Login",
-                      ),
+                      child: _isLoading.value
+                          ? CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                          : Text(
+                              "Login",
+                            ),
                       style: ElevatedButton.styleFrom(
                         shape: const StadiumBorder(),
                       ),

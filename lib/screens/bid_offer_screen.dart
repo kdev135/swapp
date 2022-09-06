@@ -16,45 +16,50 @@ class BidOfferScreen extends HookWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              FittedBox(
-                child: Card(
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      FittedBox(
-                        child: Image.asset(
-                          args["imagePath"],
-                          width: 100,
-                          height: 100,
+              Card(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      flex: 1,
+                      child: Image.asset(
+                        args["imagePath"],
+                        width: 50,
+                        height: 100,
+                      fit:BoxFit.fitHeight
+                      ),
+                    ),
+                   
+                    Expanded(
+                      flex: 3,
+                      child: Padding(
+                        padding: const EdgeInsets.only(left:10.0),
+                        child: Column(
+                         crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              args["label"],
+                              style: productLableText.copyWith(fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Cash value: ${args["price"]}",
+                              style: productDetailText,
+                            ),
+                            Text(
+                              "Tags: tv, electronics,entertainment",
+                              overflow: TextOverflow.ellipsis,
+                              style: productDetailText,
+                            ),
+                            Text("ID : #24053f", style: productDetailText.copyWith(color: Colors.grey))
+                          ],
                         ),
                       ),
-                      SizedBox(
-                        width: 5,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            args["label"],
-                            style: productLableText.copyWith(fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "Cash value: ${args["price"]}",
-                            style: productDetailText,
-                          ),
-                          Text(
-                            "Tags: tv, electronics,entertainment",
-                            overflow: TextOverflow.ellipsis,
-                            style: productDetailText,
-                          ),
-                          Text("ID : #24053f", style: productDetailText.copyWith(color: Colors.grey))
-                        ],
-                      ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               // End of bid product card

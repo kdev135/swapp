@@ -13,90 +13,96 @@ class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const drawerPadding = EdgeInsets.only(left: 10.0);
-    return SafeArea(
-      child: Scaffold(
-        appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.transparent,
-          elevation: 0,
-          title: Center(
-            child: SizedBox(height: 100, width: 100, child: SvgPicture.asset("images/swappLogo.svg")),
-          ),
-          actions: [
-            Padding(
-              padding: drawerPadding,
-              child: Badge(
-                  badgeContent: const Text("5"),
-                  badgeColor: kPrimaryColor,
-                  child: IconButton(
-                      color: Colors.black, onPressed: () {}, icon: const Icon(Icons.swap_horiz))), // Swap alerts
-            ),
-          ],
+    return Scaffold(
+      appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        title: Center(
+          child: SizedBox(height: 100, width: 100, child: SvgPicture.asset("images/swappLogo.svg")),
         ),
-        drawer: Drawer(
-          backgroundColor: kPrimaryColor,
-          width: 200,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: drawerPadding,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const CircleAvatar(
-                            radius: 30,
-                            backgroundColor: Colors.blue,
-                            child: Icon(
-                              Icons.account_circle,
-                              color: Colors.white,
-                            )),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(
-                          "${_auth.currentUser?.email}",
-                          style: defaultTextStyle,
-                        ),
-                       
-                        const SizedBox(
-                          height: 10,
-                        )
-                      ],
-                    ),
-                  )),
-              Expanded(
-                flex: 3,
-                child: Container(
-                  width: double.infinity,
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.only(top: 20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ReusableDrawerTiles(icon: Icons.account_circle, title: "Profile", onTap: () {}),
-                        ReusableDrawerTiles(icon: Icons.list, title: "My uploads", onTap: () {}),
-                        ReusableDrawerTiles(
-                            icon: Icons.logout,
-                            title: "Logout",
-                            onTap: () {
-                              print("meeeh");
-                              Navigator.pushNamed(context, "/registrationScreen");
-                            }),
-                      ],
-                    ),
+        actions: [
+          Padding(
+            padding: drawerPadding,
+            child: Badge(
+                badgeContent: const Text("5"),
+                badgeColor: kPrimaryColor,
+                child: IconButton(
+                    color: Colors.black, onPressed: () {}, icon: const Icon(Icons.swap_horiz))), // Swap alerts
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        backgroundColor: kPrimaryColor,
+        width: 200,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Expanded(
+                flex: 1,
+                child: Padding(
+                  padding: drawerPadding,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const CircleAvatar(
+                          radius: 30,
+                          backgroundColor: Colors.blue,
+                          child: Icon(
+                            Icons.account_circle,
+                            color: Colors.white,
+                          )),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "${_auth.currentUser?.email}",
+                        style: defaultTextStyle,
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      )
+                    ],
+                  ),
+                )),
+            Expanded(
+              flex: 3,
+              child: Container(
+                width: double.infinity,
+                color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ReusableDrawerTiles(icon: Icons.account_circle, title: "Profile", onTap: () {}),
+                      ReusableDrawerTiles(icon: Icons.list, title: "My uploads", onTap: () {}),
+                      ReusableDrawerTiles(
+                          icon: Icons.logout,
+                          title: "Logout",
+                          onTap: () {
+                            print("meeeh");
+                            _auth.signOut().then((value) => 
+                            Navigator.pushNamed(context, "/loginScreen"));
+                          }),
+                    ],
                   ),
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
-        body: Padding(
+      ),
+      floatingActionButton: FloatingActionButton(
+        foregroundColor: Colors.white,
+        onPressed: (() => Navigator.pushNamed(context, '/uploadProductScreen')),
+        tooltip: "Upload a product",
+        child: Icon(Icons.add),
+      ),
+      body: SafeArea(
+        child: Padding(
           padding: pagePadding,
           child: ListView(
             shrinkWrap: true,

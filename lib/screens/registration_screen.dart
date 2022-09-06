@@ -36,14 +36,17 @@ class RegistrationScreen extends HookWidget {
                     textAlign: TextAlign.center,
                   ),
                   ReusableTextField(
-                    hintText: "Email",
-                    fieldVariable: email,
-                  ),
-                  ReusableTextField(
-                    hintText: "Password",
-                    fieldVariable: password,
-                    obscureText: true,
-                  ),
+                      hintText: "eg. ellie23@email.com",
+                      fieldVariable: email,
+                      labelText: "Email",
+                    ),
+                    ReusableTextField(
+                      labelText: "Password",
+                      hintText: "",
+                      fieldVariable: password,
+                      obscureText: true,
+                      maxLines:1
+                    ),
                   SizedBox(
                     height: 20,
                   ),
